@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homeless Report System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Homeless Report System</h1>
+            <p>Help us support those in need by reporting their location and status</p>
+        </header>
+
+        <main>
+            <section class="report-form">
+                <h2>Submit a Report</h2>
+                <form id="reportForm">
+                    <div class="form-group">
+                        <label for="location">Location/Address:</label>
+                        <input type="text" id="location" name="location" required placeholder="Enter street address or location">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="coordinates">GPS Coordinates (Optional):</label>
+                        <div class="coordinates">
+                            <input type="text" id="latitude" name="latitude" placeholder="Latitude">
+                            <input type="text" id="longitude" name="longitude" placeholder="Longitude">
+                        </div>
+                        <button type="button" id="getLocation" class="btn-secondary">Get Current Location</button>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="status">Health Status:</label>
+                        <select id="status" name="status" required>
+                            <option value="">Select status...</option>
+                            <option value="healthy">Appears Healthy</option>
+                            <option value="minor_concern">Minor Health Concern</option>
+                            <option value="urgent">Urgent Medical Attention Needed</option>
+                            <option value="unknown">Unknown</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="urgency">Urgency Level:</label>
+                        <select id="urgency" name="urgency" required>
+                            <option value="">Select urgency...</option>
+                            <option value="low">Low - Informational</option>
+                            <option value="medium">Medium - Needs Assistance</option>
+                            <option value="high">High - Immediate Help Required</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Additional Details:</label>
+                        <textarea id="description" name="description" rows="4" placeholder="Describe the situation, approximate age, any special needs or concerns..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reporterName">Your Name (Optional):</label>
+                        <input type="text" id="reporterName" name="reporterName" placeholder="Anonymous">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reporterContact">Your Contact (Optional):</label>
+                        <input type="text" id="reporterContact" name="reporterContact" placeholder="Phone or email">
+                    </div>
+
+                    <button type="submit" class="btn-primary">Submit Report</button>
+                </form>
+            </section>
+
+            <section class="reports-list">
+                <h2>Recent Reports</h2>
+                <div id="reportsList">
+                    <p class="no-reports">No reports yet. Submit the first one above.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
