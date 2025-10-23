@@ -18,6 +18,23 @@ let reportIdCounter = 1;
 
 // API Routes
 
+
+/**
+ * GET /api
+ * Base API endpoint
+ */
+app.get('/api', (req, res) => {
+    res.json({
+        success: true,
+        message: 'Homeless Report API v1.0',
+        endpoints: {
+            health: '/api/health',
+            reports: '/api/reports',
+            reportById: '/api/reports/:id',
+            stats: '/api/stats'
+        }
+    });
+});
 /**
  * GET /api/health
  * Health check endpoint
