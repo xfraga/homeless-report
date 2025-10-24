@@ -14,6 +14,19 @@
         </header>
 
         <main>
+                    <!-- Language Selector -->
+        <div class="language-selector" style="text-align: right; padding: 10px; background: #f8f9fa; border-bottom: 1px solid #ddd;">
+            <label for="languageSelect" style="margin-right: 10px; font-weight: bold;">🌐 <span data-i18n="languageSelector">Language</span>:</label>
+            <select id="languageSelect" onchange="changeLanguage(this.value)" style="padding: 5px 10px; border-radius: 5px; border: 1px solid #ccc;">
+                <option value="en">English</option>
+                <option value="es">Español</option>
+                <option value="fr">Français</option>
+                <option value="de">Deutsch</option>
+                <option value="it">Italiano</option>
+                <option value="pt">Português</option>
+            </select>
+        </div>
+
             <section class="report-form">
                 <h2>Submit a Report</h2>
                 <form id="reportForm">
@@ -79,6 +92,9 @@
             </section>
         </main>
     </div>
+    <!-- Translation System -->
+    <script src="translations.js"></script>
+
 
     <script src="main.js"></script>
 </body>
