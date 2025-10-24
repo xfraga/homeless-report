@@ -122,6 +122,25 @@ app.get('/api/reports/:id', (req, res) => {
     }
 });
 
+
+/**
+ * GET /api/reports
+ * Get all reports
+ */
+app.get('/api/reports', (req, res) => {
+    try {
+        res.json({
+            success: true,
+            data: reports
+        });
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            error: 'Failed to fetch reports',
+            message: error.message
+        });
+    }
+});
 /**
  * POST /api/reports
  * Create a new report
